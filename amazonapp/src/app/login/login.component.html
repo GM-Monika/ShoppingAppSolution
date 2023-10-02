@@ -1,0 +1,35 @@
+<body>
+    <form  #loginForm="ngForm">
+      <div class="wrapper">
+      
+        <h1> 
+          <marquee>Login</marquee>
+        </h1>
+          <h2 >User Login</h2>
+           
+          <div class="input-box">        
+            <input  type="text"  name="username" #pname="ngModel" class="form-control" [(ngModel)]="user.username" placeholder="Username" required>
+          <div *ngIf="pname.errors && pname.touched" class="alert alert-danger" class="username">
+            UserName cannot be empty
+          </div>
+          </div>
+
+          <div class="input-box">
+             <input  type="password" name="password" #pname="ngModel" class="form-control" [(ngModel)]="user.password" placeholder="Password" required>
+               
+             <!-- //error message -->
+             <span *ngIf="pname.errors && pname.touched" class="alert alert-danger">
+              password cannot be empty
+          </span>
+          
+          </div>
+
+        <button style="background-color:cadetblue; margin:5px; border-radius: 20px;" (click)="loginClick()" class="btn btn-primary">Login</button>
+
+        <button class="btn btn-danger" style="border-radius: 20px" >Reset</button>
+
+  </div>
+
+    </form>
+
+   </body>

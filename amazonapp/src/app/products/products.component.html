@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<body>
+
+    <div *ngIf="products.length>0 else noproduct">
+
+        <div class="alert alert-success" *ngFor="let product of products ">
+  
+       
+  
+          <div class="card" style="width: 18rem ;">
+  
+              <img class="card-img-top" [src]="product.pic" alt="Card image cap">
+  
+              <div class="card-body">
+  
+                <h5 class="card-title">{{product.name}}</h5>
+  
+                <br>
+
+                Product Id: {{product.id}}
+         
+                 <br>
+         
+                 Product Price: {{product.price}}
+         
+                 <br/>
+         
+                 Product Quantity: {{product.quantity}}
+         
+                 <br/>
+
+                <button  (click)="addToCart(product)" class="btn btn-dark"> AddTo Cart<span [class]="className"></span></button> 
+
+  
+                <br />
+  
+             
+  
+              </div>
+  
+            </div>
+  
+        </div>
+  
+      </div>
+
+
+
+        <!-- <button  (click)="addToCart()" class="btn btn-dark"> AddTo Cart<span [class]="className"></span></button> -->
+
+
+
+
+
+    <!-- for else part we have to use ng-tempalte -->
+
+<ng-template #noproduct >
+
+    <div class="alert alert-warning">
+
+        No Products yet
+
+    </div>
+
+</ng-template>
+
+</body>
