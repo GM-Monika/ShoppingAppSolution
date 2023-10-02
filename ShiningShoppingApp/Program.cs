@@ -21,7 +21,8 @@ namespace ShiningShoppingApp
             });
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IProductService,ProductService>();
-
+            builder.Services.AddScoped<ICartService, CartService>();
+            builder.Services.AddScoped<ICartRepo<int, Cart>, CartRepo>();
             builder.Services.AddScoped<IUserRepo<string, Login>, UserRepo>();
             builder.Services.AddScoped<IProductRepo<int, Product>, ProductRepo>();
            
